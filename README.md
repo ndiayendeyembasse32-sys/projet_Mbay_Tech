@@ -1,17 +1,35 @@
-Ndeye Mbasse Ndiaye Soda Thiam Awa Diawara khadidiatou Cisse
+# 🌾 MBAY TECH - Assistant d'Irrigation Intelligent
 
-🌾 MBAY TECH - Assistant d'Irrigation Connecté Mbay Tech est un système intelligent qui aide les agriculteurs à économiser l'eau. Il mesure l'humidité du sol et indique en temps réel sur smartphone s'il faut arroser ou non. Comment ça marche ?
+Projet IoT réalisé par Ndeye Mbasse Ndiaye - 6 Mars 2026
 
-Le Capteur mesure l'humidité de la terre.
-L'ESP8266 analyse la donnée (Trop sec / Parfait / Trop humide).
-Le Serveur Web génère une interface couleur sur le téléphone via Wi-Fi.
-Matériel
+Mbay Tech est une solution technologique conçue pour optimiser l'irrigation agricole au Sénégal. Ce prototype utilise l'Internet des Objets (IoT) pour surveiller l'humidité du sol et fournir une aide à la décision en temps réel sur smartphone.
 
-Carte ESP8266 NodeMCU (Serveur Web embarqué)
-Capteur d'humidité YL-69
-Smartphone (Client)
-Installation
+Fonctionnalités Clés
+- **Lecture Temps Réel :** Mesure continue du taux d'humidité via une sonde capacitive.
+- **Analyse Intelligente :** Algorithme qui interprète les données (Sécheresse, Optimal, Saturation) et donne des conseils agronomiques.
+- **Historique Graphique :** Visualisation de l'évolution de l'humidité sur les dernières minutes grâce à Chart.js.
+- **Dashboard Multi-Zones :** Simulation de profils spécifiques pour le Mil, l'Arachide et le Maraîchage.
 
-Alimenter la carte en USB.
-Se connecter au Wi-Fi iPhone.
-Aller sur l'adresse IP 172.20.10.3.
+ Architecture Technique
+
+
+- **Microcontrôleur :** ESP8266 (NodeMCU) servant de serveur Web embarqué.
+- **Capteur :** Sonde d'humidité du sol YL-69.
+- **Réseau :** Connexion Wi-Fi locale (Mode Station via partage de connexion).
+- **Interface :** Web App responsive développée en HTML/CSS/JavaScript (Chart.js).
+
+ Logique de Décision
+Le système utilise des seuils critiques pour alerter l'utilisateur :
+- **0 - 20% :** 🔴 Danger Sécheresse (Irrigation immédiate).
+- **20 - 70% :** 🟢 État Optimal (Conditions idéales).
+- **70 - 85% :** 🟠 Vigilance (Humidité élevée).
+- **85 - 100% :** 🛑 Danger Saturation (Risque d'asphyxie des racines).
+
+ Installation et Test
+1. Téléverser le code `MbayTech_Final.ino` sur la carte.
+2. Connecter le montage à un **Power Bank** pour l'autonomie.
+3. Se connecter au Wi-Fi `iPhone` (mot de passe : `ndeya226`).
+4. Accéder à l'interface via l'adresse IP affichée sur le moniteur série.
+
+
+Ce projet démontre l'application de l'Edge Computing pour une agriculture de précision durable.
